@@ -25,6 +25,7 @@ env:
     - GITHUB=shaarli/Shaarli/archive/v0.5.0
     - GITHUB=shaarli/Shaarli/archive/v0.5.4
     - GITHUB=shaarli/Shaarli/archive/master
+    - GITHUB=shaarli/Shaarli/archive/stable
 #    - GITHUB=mro/Shaarli/archive/feature/thumbnails
 
 matrix:
