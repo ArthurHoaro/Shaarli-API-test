@@ -30,7 +30,7 @@
   <xsl:output method="text"/>
 
   <xsl:template match="/">
-    <xsl:for-each select="html/body//form[.//input/@name='delete_link/@value' and .//input/@name='token'/@value]">
+    <xsl:for-each select="html/body//form[.//input/@name='delete_link' and .//input/@name='token']">
       <xsl:value-of select=".//input[@name='lf_linkdate']/@value"/><xsl:text> </xsl:text><xsl:value-of select=".//input[@name='token']/@value"/><xsl:text>
 </xsl:text>
     </xsl:for-each>
