@@ -30,11 +30,11 @@
   <xsl:output method="text"/>
 
   <xsl:template match="/">
-    <xsl:for-each select="html/body//form[@method='POST' and .//input/@name='delete_link']">
+    <xsl:for-each select="html/body//form[.//input/@name='delete_link' and .//input/@name='token']">
       <xsl:value-of select=".//input[@name='lf_linkdate']/@value"/><xsl:text> </xsl:text><xsl:value-of select=".//input[@name='token']/@value"/><xsl:text>
 </xsl:text>
     </xsl:for-each>
-    <xsl:for-each select="html/body//a[starts-with(@href, '?delete_link=')]">
+    <xsl:for-each select="html/body//a[contains(@href, '?delete_link=') and contains(@href, '&amp;token=')]">
       <xsl:variable name="lf_linkdate" select="substring-before(substring-after(@href,'?delete_link='), '&amp;')"/>
       <xsl:variable name="token" select="substring-after(@href,'&amp;token=')"/>
       <xsl:value-of select="$lf_linkdate"/><xsl:text> </xsl:text><xsl:value-of select="$token"/><xsl:text>
