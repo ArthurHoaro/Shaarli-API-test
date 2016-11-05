@@ -83,6 +83,8 @@ do
   line="$(xsltproc --html --nonet "$0".xslt curl.tmp.html 2>/dev/null | head -n 1)"
   [ "" = "$line" ] && break
 
+	fgrep "delete_link=" "curl.tmp.html"
+
   echo "$line" | while read lf_linkdate token
   do
     echo "lf_linkdate=${lf_linkdate}  token=${token}"
