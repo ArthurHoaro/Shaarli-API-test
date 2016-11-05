@@ -31,7 +31,9 @@
 
   <xsl:template match="/">
     <xsl:for-each select="html/body//form[.//input/@name='delete_link' and .//input/@name='token']">
-      <xsl:value-of select=".//input[@name='lf_linkdate']/@value"/><xsl:text> </xsl:text><xsl:value-of select=".//input[@name='token']/@value"/><xsl:text>
+      <xsl:variable name="lf_linkdate" select=".//input[@name='lf_linkdate']/@value"/>
+      <xsl:variable name="token" select=".//input[@name='token']/@value"/>
+      <xsl:value-of select="$lf_linkdate"/><xsl:text> </xsl:text><xsl:value-of select="$token"/><xsl:text>
 </xsl:text>
     </xsl:for-each>
     <xsl:for-each select="html/body//a[contains(@href, 'delete_link=') and contains(@href, 'token=')]">
