@@ -80,11 +80,11 @@ do
   # re-extract the token from the most recent HTTP response as it's consumed after each
   # HTTP request. So a simple for loop doesn't do the trick.
 
-  line="$(xsltproc --html --nonet "${0}".xslt curl.tmp.html 2>/dev/null | head -n 1)"
-  [ "" = "$line" ] && break
-
 	echo "huhuh"
 	fgrep "delete_link=" "curl.tmp.html"
+
+  line="$(xsltproc --html --nonet "${0}".xslt curl.tmp.html 2>/dev/null | head -n 1)"
+  [ "" = "$line" ] && break
 
   echo "${line}" | while read lf_linkdate token
   do
