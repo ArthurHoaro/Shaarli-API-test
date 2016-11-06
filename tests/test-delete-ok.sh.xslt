@@ -37,7 +37,7 @@
 </xsl:text>
     </xsl:for-each>
     <xsl:for-each select="html/body//a[contains(@href, '?delete_link=') and contains(@href, '&amp;token=')]">
-      <xsl:variable name="lf_linkdate" select="substring-before(substring-after(@href,'?delete_link='), '&amp;')"/>
+      <xsl:variable name="lf_linkdate" select="substring-before(substring-after(@href,'?delete_link='), '&amp;token=')"/>
       <xsl:variable name="token" select="substring-after(@href,'&amp;token=')"/>
       <xsl:value-of select="$lf_linkdate"/><xsl:text> </xsl:text><xsl:value-of select="$token"/><xsl:text>
 </xsl:text>
