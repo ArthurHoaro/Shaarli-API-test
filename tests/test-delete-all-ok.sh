@@ -55,9 +55,9 @@ LOCATION=$(curl --url "${LOCATION}" \
   --data-urlencode "password=${PASSWORD}" \
   --data-urlencode "token=${TOKEN}" \
   --data-urlencode "returnurl=${BASE_URL}/?" \
-  --cookie curl.cook --cookie-jar curl.cook \
-  --location --output curl.tmp.html \
-  --trace-ascii curl.tmp.trace --dump-header curl.tmp.head \
+  --cookie "curl.cook" --cookie-jar "curl.cook" \
+  --location --output "curl.tmp.html" \
+  --trace-ascii "curl.tmp.trace" --dump-header "curl.tmp.head" \
   --write-out '%{url_effective}' 2>/dev/null)
 errmsg=$(xmllint --html --nowarning --xpath 'string(/html[1 = count(*)]/head[1 = count(*)]/script[starts-with(.,"alert(")])' curl.tmp.html)
 assert_equal "" "${errmsg}" 64 "do login error"
@@ -73,6 +73,9 @@ curl --url "${BASE_URL}/?do=atom" \
 entries=$(xmllint --xpath 'count(/*/*[local-name()="entry"])' curl.tmp.atom)
 assert_equal "2" "${entries}" 74 "Atom feed entries"
 
+	fgrep "delete_link=" "curl.tmp.html"
+	cat "curl.tmp.html"
+exit 0
 
 # now figure out the precise lf_linkdate and token for each entry to delete
 while true
