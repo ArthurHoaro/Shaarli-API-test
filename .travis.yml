@@ -16,7 +16,7 @@ env:
     - USERNAME=tast
     - PASSWORD=tust
   matrix:
-    - GITHUB=shaarli/ArthurHoaro/archive/feature/ids-bis
+    - GITHUB=ArthurHoaro/Shaarli/archive/feature/ids-bis
 matrix:
   allow_failures:
     # first community release is known to fail, too:
