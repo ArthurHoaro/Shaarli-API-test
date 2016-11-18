@@ -16,22 +16,7 @@ env:
     - USERNAME=tast
     - PASSWORD=tust
   matrix:
-    - GITHUB=sebsauvage/Shaarli/archive/master
-#    - GITHUB=shaarli/Shaarli/archive/v0.0.40beta
-    - GITHUB=shaarli/Shaarli/archive/v0.0.41beta
-    - GITHUB=shaarli/Shaarli/archive/v0.0.42beta
-#    - GITHUB=shaarli/Shaarli/archive/v0.0.43beta
-#    - GITHUB=shaarli/Shaarli/archive/v0.0.44beta
-    - GITHUB=shaarli/Shaarli/archive/v0.0.45beta
-    - GITHUB=shaarli/Shaarli/archive/v0.5.4
-    - GITHUB=shaarli/Shaarli/archive/v0.6.4
-    - GITHUB=shaarli/Shaarli/archive/v0.6.5
-    - GITHUB=shaarli/Shaarli/archive/v0.7.0
-    - GITHUB=shaarli/Shaarli/archive/v0.8.0
-    - GITHUB=shaarli/Shaarli/archive/master
-    - GITHUB=shaarli/Shaarli/archive/stable
-    - GITHUB=shaarli/Shaarli/archive/webdesign    
-#    - GITHUB=mro/Shaarli/archive/feature/thumbnails
+    - GITHUB=shaarli/ArthurHoaro/archive/feature/ids-bis
 matrix:
   allow_failures:
     # first community release is known to fail, too:
