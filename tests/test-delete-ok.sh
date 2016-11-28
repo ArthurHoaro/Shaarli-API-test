@@ -78,6 +78,10 @@ assert_equal "2" "${entries}" 74 "Atom feed entries"
 # deletes fail silently. So the loop below deletes only the first entry.
 
 # now figure out the precise lf_linkdate and token for each entry to delete
+echo "DEBUG FILE CONTENT"
+cat curl.tmp.html 
+echo "DEBUG XSLT"
+echo `xsltproc --html --nonet "$0".xslt curl.tmp.html`
 xsltproc --html --nonet "$0".xslt curl.tmp.html 2>/dev/null | while read lf_linkdate token
 do
   echo "lf_linkdate=${lf_linkdate}  token=${token}"
